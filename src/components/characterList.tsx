@@ -26,9 +26,9 @@ const CharacterList = () => {
 					)}
 			</ul>
 			<Pagination currentPage={page} totalCount={data?.count ?? 0} itemsPerPage={10}
-									onPageChange={(newPage) => setPage(newPage)}/>;
-			<CharacterModal open={!!selectedCharacterIndex} onClose={() => setSelectedCharacterIndex(null)}
-											character={selectedCharacterIndex && data? data.results[selectedCharacterIndex] : null}/>;
+									onPageChange={(newPage) => setPage(newPage)}/>
+			<CharacterModal open={selectedCharacterIndex !== null} onClose={() => setSelectedCharacterIndex(null)}
+											character={selectedCharacterIndex !== null && data? data.results[selectedCharacterIndex] : null}/>
 		</>
 	)
 		;
